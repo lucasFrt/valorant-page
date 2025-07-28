@@ -1,0 +1,19 @@
+header{ 
+
+}
+.nav {
+    text-align: left;
+    background-color: rgb(28, 27, 27);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 5vh;
+    display: flex; 
+    align-items: center; 
+    gap: 15px;
+}
+p {
+    font-weight: bold;
+    font-size: 20px;
+}

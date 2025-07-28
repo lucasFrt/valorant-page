@@ -38,15 +38,18 @@ function App() {
   
   //retorno (pagina principal)
   return (
+
     <div className={'agentes-container'}>
       <HeaderComponents />
-      <h1>Valorant Wiki </h1>
-      <label>
+      <br />
+      <h1>Agentes</h1>
+      <label className="pesquisa-label">
         Pesquisar agentes: <input name="Pesquisa" onChange={(valor) => { 
           setPesquisa(valor.target.value);
         }} /> 
       </label>
       <hr />
+      <br />
       <div className="agentes-grid">
         
         {agentesFiltrados.map((agente) => (
