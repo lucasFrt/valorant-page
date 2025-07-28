@@ -1,11 +1,21 @@
+//imports
+
 import React, { useEffect, useState } from 'react';
 import './App.css'
 import type { AgenteType } from './types/agente.type';
+import { HeaderComponents } from './components/header/HeaderComponent';
 
+//app
 function App() {
+  //hooks
+  //useState para armazenar os agentes 
   const [agentes, setAgentes] = useState<Array<AgenteType>>([]);
+  const [pesquisa, setPesquisa] = useState("");
+  //URL da API
   const URLagents = "https://valorant-api.com/v1/agents";
+  //useEffct busca API (agentes)
   useEffect(() => {
+    
     fetch(URLagents)
       .then((response) => {
         if (!response.ok) {
@@ -20,20 +30,35 @@ function App() {
         console.error(error);
       });
   }, []);
+
+
+    const agentesFiltrados = agentes.filter((agente) =>
+      agente.displayName.toLowerCase().includes(pesquisa.toLowerCase())
+      );
   
+  //retorno (pagina principal)
   return (
-    <div className={'agents-container'}>
+    <div className={'agentes-container'}>
+      <HeaderComponents />
       <h1>Valorant Wiki </h1>
+      <label>
+        Pesquisar agentes: <input name="Pesquisa" onChange={(valor) => { 
+          setPesquisa(valor.target.value);
+        }} /> 
+      </label>
+      <hr />
       <div className="agentes-grid">
-        {agentes.map((agente) => (
-          <div className='listaAgentes' key={agente.uuid}>
-            <div className="agente-nome">{agente.displayName}</div>
-            <img src={agente.displayIcon} alt={agente.displayName} />
+        
+        {agentesFiltrados.map((agente) => (
+        <div className='listaAgentes' key={agente.uuid}>
+          <div className="agente-nome">
+            <p>{agente.displayName}</p>
           </div>
+          <img src={agente.displayIcon} alt={agente.displayName} />
+        </div>
         ))}
-      </div>
+        </div>
     </div>
   );
-}
-
+ }
 export default App
