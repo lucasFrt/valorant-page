@@ -17,7 +17,7 @@ body {
 }
 .listaAgentes {
   border-radius: 10px;
-  background-color: #771e1e;
+  background-color: rgb(28, 27, 27);
 }
 .agentes-grid {
   display: grid;
@@ -25,7 +25,7 @@ body {
   gap: 1rem;
   margin-top: 2rem;
 }
-.pesquisa-label {
+.pesquisa {
   font-weight: bold;
   font-size: 1.1rem;
   color: #fff;
@@ -33,4 +33,13 @@ body {
   gap: 8px;
   display: flex;
   justify-content: right;
+}
+
+.pesquisa.highlighted {
+  color: #cb4230;
+  font-weight: bold;
+}
+.pesquisando {
+  background-color: rgb(28, 27, 27);
+  border-radius: 10px;
 }

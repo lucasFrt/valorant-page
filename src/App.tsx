@@ -1,5 +1,3 @@
-//imports
-
 import React, { useEffect, useState } from 'react';
 import './App.css'
 import type { AgenteType } from './types/agente.type';
@@ -10,9 +8,11 @@ function App() {
   //hooks
   //useState para armazenar os agentes 
   const [agentes, setAgentes] = useState<Array<AgenteType>>([]);
+  const [todosAgentes, setTodosAgentes] = useState<Array<AgenteType>>([]);
   const [pesquisa, setPesquisa] = useState("");
   //URL da API
   const URLagents = "https://valorant-api.com/v1/agents";
+
   //useEffct busca API (agentes)
   useEffect(() => {
     
@@ -24,18 +24,23 @@ function App() {
         return response.json();
       })
       .then(response => {
-        setAgentes(response.data);
+        // setAgentes(response.data);
+        setTodosAgentes(response.data);
       })
       .catch(error => {
         console.error(error);
       });
   }, []);
-
-
-    const agentesFiltrados = agentes.filter((agente) =>
+  useEffect(() => {
+    
+    const agentesFiltrados = todosAgentes.filter((agente) =>
+      
       agente.displayName.toLowerCase().includes(pesquisa.toLowerCase())
       );
+      setAgentes(agentesFiltrados)
+  },[pesquisa, todosAgentes])
   
+      
   //retorno (pagina principal)
   return (
 
@@ -43,8 +48,8 @@ function App() {
       <HeaderComponents />
       <br />
       <h1>Agentes</h1>
-      <label className="pesquisa-label">
-        Pesquisar agentes: <input name="Pesquisa" onChange={(valor) => { 
+      <label className="pesquisa" >
+        Pesquisar agentes: <input name="Pesquisa" className="pesquisando" onChange={(valor) => { 
           setPesquisa(valor.target.value);
         }} /> 
       </label>
@@ -52,7 +57,8 @@ function App() {
       <br />
       <div className="agentes-grid">
         
-        {agentesFiltrados.map((agente) => (
+
+        {agentes.map((agente) => (
         <div className='listaAgentes' key={agente.uuid}>
           <div className="agente-nome">
             <p>{agente.displayName}</p>

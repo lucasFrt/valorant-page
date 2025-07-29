@@ -4,4 +4,5 @@ export type AgenteType = {
   uuid: string;
   displayName: string;
   displayIcon: string
+  isPlayableCharacter: boolean;
 }
