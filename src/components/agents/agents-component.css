@@ -1,0 +1,48 @@
+ #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-weight: bold;
+  background-color: #00000020;
+}
+h1 {
+  margin-top: 50px;
+  font-size: 2.6em;
+  line-height: 1.1;
+  text-align: left;
+}
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  color: #d0d0d0;
+}
+.listaAgentes {
+  border-radius: 10px;
+  background-color: rgb(28, 27, 27);
+}
+.agentes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.texto-pesquisa {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  gap: 8px;
+  display: flex;
+  justify-content: right;
+}
+.caixa-pesquisa {
+  border: 2px solid transparent;
+  padding: 4px 15px;
+  border-radius: 3px;
+  color: #d0d0d0;
+}
+.caixa-pesquisa:focus {
+  outline: none;
+  box-shadow: none;
+}
