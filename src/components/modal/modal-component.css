@@ -1,0 +1,64 @@
+.modalzinho {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.85); 
+}
+
+
+.infosModal {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    background-color: #1f1e1e;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    max-width: 800px;     
+    width: 90%; 
+}
+
+.agente-texto {
+    flex: 1; 
+}
+
+.foto-agente {
+    max-width: 400px; 
+    height: auto;
+}
+
+.nome-agente {
+    color: rgb(228, 228, 228);
+    margin-top: 0; 
+}
+
+.info-agente {
+    font-weight: lighter;
+    background-color: #2e2e2e;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    line-height: 1.5; 
+}
+
+.info-agente strong {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #c7c7c7;
+}
+
+.role-icon {
+    max-width: 18px;
+    margin-right: 10px;
+    vertical-align: middle;
+}

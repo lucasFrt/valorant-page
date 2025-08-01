@@ -1,14 +1,13 @@
 import './App.css'
 import { HeaderComponents } from './components/header/HeaderComponent';
-import { AgentsComponent } from './components/agents/agentsComponent';
+import { Agentes } from './components/agents/Agentes';
 
 
 export default function App() {
   return(
     <div className='main'> 
       <HeaderComponents />
-      <AgentsComponent />
+      <Agentes />
     </div>
   );
 };
-

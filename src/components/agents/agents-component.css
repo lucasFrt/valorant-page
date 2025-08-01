@@ -17,11 +17,16 @@ body {
   display: flex;
   min-width: 320px;
   min-height: 100vh;
-  color: #d0d0d0;
+  color: #ec5458;
 }
 .listaAgentes {
   border-radius: 10px;
   background-color: rgb(28, 27, 27);
+  cursor: pointer;
+}
+.listaAgentes:hover {
+  background-color: rgba(0, 0, 0, 0.249);
+  transition: 0.5s;
 }
 .agentes-grid {
   display: grid;
@@ -35,6 +40,7 @@ body {
   gap: 8px;
   display: flex;
   justify-content: right;
+  color: #fff;
 }
 .caixa-pesquisa {
   border: 2px solid transparent;
@@ -45,4 +51,7 @@ body {
 .caixa-pesquisa:focus {
   outline: none;
   box-shadow: none;
+}
+.imagem-agente {
+  max-width: 100;
 }
